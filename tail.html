@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looping Typing Animation</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .typing-text {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing-animation 7.5s linear infinite;
+    }
+
+    .typing-text::after {
+      content: "|";
+      display: inline-block;
+      width: 0;
+      animation: blink-animation 1s infinite;
+    }
+
+    @keyframes typing-animation {
+      0% {
+        width: 0;
+      }
+      25% {
+        width: 0;
+      }
+      50% {
+        width: 100%;
+      }
+      75% {
+        width: 100%;
+      }
+      100% {
+        width: 0;
+      }
+    }
+
+    @keyframes blink-animation {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex items-center justify-center h-screen">
+    <div class="relative">
+      <div class="typing-text font-bold text-4xl">
+        Hello <span>world</span>, <span>mars</span>, <span>trump</span>!
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
